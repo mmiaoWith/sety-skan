@@ -1,0 +1,15 @@
+<h4>Please specify your QA team:</h4>
+<form id="input">
+<table class="input_class">
+   <tr><td>
+   <label><input type="radio" name="team" value="bolt" checked=(state.site === 'bolt') onClick('handleSiteChange')>BOLT</label>
+   </td></tr><tr><td>
+   <label><input type="radio" name="team" value="kijiji" checked=(state.site === 'kijiji') onClick('handleSiteChange')>kijiji IT</label>
+   </td></tr><tr><td>
+   <label><input type="radio" name="team" value="gumtree" checked=(state.site === 'gumtree') onClick('handleSiteChange')>Gumtree AU</label>
+   </td></tr>
+   <tr><td>
+   <button type="submit" onClick('getData')> submit </button>
+   </td></tr>
+</table>
+</form>
