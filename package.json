@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "webpack",
-    "test": "npm run build && node server.js"
+    "start": "npm run build && node server.js"
   },
   "author": "miao",
   "license": "ISC",
