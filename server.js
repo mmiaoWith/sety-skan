@@ -36,6 +36,8 @@ require('src/services/routes')(app);
 
 // Map the "/" route to the home page
 app.get('/', require('src/pages/home'));
+app.get('/bolt-dashboard-page',require('src/pages/bolt_dashboard'));
+app.get('/scanReport',require('src/pages/scan_report'));
 
 app.listen(port, function(err) {
     if (err) {

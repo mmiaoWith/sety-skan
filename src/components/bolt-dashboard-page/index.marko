@@ -1,44 +1,37 @@
-<html>
-    <head>
-        <title>Bolt Dashboard Page</title>
-        <link type="text/css" rel="stylesheet" media="all" href="/static/css/style.css">
-        <link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon-32x32.png">
-    </head>
-    <body>
-        <div id = "container">
-        <h1>QA Security Testing of BOLT</h1>
-        <div id = "top">
+<div id = "container">
+    <h1>QA Security Testing of BOLT</h1>
+    <div id = "top">
         <h3>Summary of the issues found by last scan:</h3>
-        <table class="summarytable" cellpadding="0" cellspacing="0">
+        <table class="summary_table" cellpadding="0" cellspacing="0">
             <tbody>
             <tr class="top-row">
                  <td>Risk</td>
                  <td>Number</td>
             </tr>
             <tr class="high-issue">
-                 <td>High <br />(P2)</td>
+                 <td>High</td>
                  <td>5</td>
             </tr>
             <tr class="medium-issue">
-                 <td>Medium <br />(P3)</td>
+                 <td>Medium</td>
                  <td>4</td>
             </tr>
             <tr class="low-issue">
-                 <td>Low <br />(P4)</td>
+                 <td>Low</td>
                  <td>3</td>
             </tr>
             <tr class="info-issue">
-                 <td>Information</td>
+                 <td>Informational</td>
                  <td>2</td>
             </tr>
             </tbody>
         </table>
-        </div>
-        </div>
+    </div>
+    <div id="bottom">
         <div id = "bottom-left">
             <h3>Scan Report History</h3>
-            <ul>
-                <li><a href="#">Scan Report 1</a></li>
+            <ul id="report">
+                <li><a href="/scanReport">Scan Report 1</a></li>
                 <li><a href="#">Scan Report 2</a></li>
                 <li><a href="#">Scan Report 3</a></li>
                 <li><a href="#">Scan Report 4</a></li>
@@ -48,5 +41,5 @@
         <div id = "bottom-right">
             <a href = "#">Launch New Scan</a>
         </div>
-    </body>
-</html>
+    </div>
+</div>
