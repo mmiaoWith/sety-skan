@@ -1,4 +1,9 @@
 require('src/global-style/style.less');
 require('src/layouts/default/style.less');
-require('src/components/app-select');
+require('src/components/select_site_page');
+require('src/components/bolt_dashboard_page');
+require('src/components/scan_reports');
+require('src/components/lanch_new_scan');
+require('src/components/lanch_scan');
+require('src/components/button_back_to_dashboard');
 require('marko/components').init();

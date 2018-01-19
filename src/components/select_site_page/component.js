@@ -3,7 +3,6 @@ require('whatwg-fetch');
 
 let setSites = require('../../clients/fetchApi').setSites;
 
-
 module.exports = {
     onCreate:function () {
         this.state = {
@@ -12,7 +11,6 @@ module.exports = {
     },
 
     handleSiteChange:function(event) {
-        console.log("come here: event.target.value----------" + event.target.value);
         this.state.site = event.target.value;
     },
 
@@ -21,12 +19,18 @@ module.exports = {
         setSites(data)
         .then(function(json){
             if(json.success) {
-                if(json.site.trim().endsWith("bolt"))
-                    location.href = '/bolt-dashboard-page';
-                else if(json.site.trim().endsWith("kijiji"))
+                if(json.site.trim().endsWith("bolt")) {
+                    sessionStorage.setItem("scanSite","bolt");
+                    location.href = '/bolt_dashboard_page';
+                }
+                else if(json.site.trim().endsWith("kijiji")) {
+                    sessionStorage.setItem("scanSite","kijiji");
                     location.href = '/kijiji-page';
-                else if(json.site.trim().endsWith("gumtree"))
+                }
+                else if(json.site.trim().endsWith("gumtree")) {
+                    sessionStorage.setItem("scanSite","gumtree");
                     location.href = '/gumtree-page';
+                }
                 else
                     location.href = '/error';
             }

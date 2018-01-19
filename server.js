@@ -2,6 +2,7 @@ require('app-module-path').addPath(__dirname);
 require('marko/express');
 require('marko/node-require');
 var bodyParser = require('body-parser');
+var setService = require('./src/services/setFunction');
 
 function requireNoOp(module, filename) { /* no-op */ }
 
@@ -32,12 +33,35 @@ app.use(compression());
 // Allow all of the generated files under "static" to be served up by Express
 app.use('/static', serveStatic(__dirname + '/static'));
 
-require('src/services/routes')(app);
+// require('./src/services/routes');
+require('./src/services/setFunction');
+app.post('/input',function (req, res) {
+    setService.setSites(req.body.data).then(function (data) {
+        res.json(data);
+    })
+        .catch(function (err) {
+            console.log(err);
+            res.status(500).send('get Unable to load sites');
+        });
 
+});
+
+app.post('/bdashboard',function (req, res) {
+    setService.setBoltReports(req.body.data).then(function (data) {
+        res.json(data);
+    })
+        .catch(function (err) {
+            console.log(err);
+            res.status(500).send('get Unable to load reports');
+        });
+
+});
 // Map the "/" route to the home page
 app.get('/', require('src/pages/home'));
-app.get('/bolt-dashboard-page',require('src/pages/bolt_dashboard'));
+app.get('/bolt_dashboard_page',require('src/pages/bolt_dashboard'));
 app.get('/scanReport',require('src/pages/scan_report'));
+app.get('/newScan',require('src/pages/lanch_new_scan'));
+app.get('/lanchScan',require('src/pages/lanch_scan'));
 
 app.listen(port, function(err) {
     if (err) {
