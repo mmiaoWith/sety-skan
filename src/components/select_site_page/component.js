@@ -18,6 +18,7 @@ module.exports = {
         var data = {"data":this.state.site};
         setSites(data)
         .then(function(json){
+            console.log(JSON.stringify(json));
             if(json.success) {
                 if(json.site.trim().endsWith("bolt")) {
                     sessionStorage.setItem("scanSite","bolt");

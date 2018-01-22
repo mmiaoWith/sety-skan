@@ -11,7 +11,7 @@ let setSites = function (data) {
 };
 
 let setReports = function (data) {
-    return fetch('/bdashboard',{
+    return fetch('/bolt_dashboard',{
         method: "POST",
         headers:{'Content-Type': 'application/json'},
         body:JSON.stringify(data)

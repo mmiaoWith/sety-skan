@@ -33,29 +33,8 @@ app.use(compression());
 // Allow all of the generated files under "static" to be served up by Express
 app.use('/static', serveStatic(__dirname + '/static'));
 
-// require('./src/services/routes');
-require('./src/services/setFunction');
-app.post('/input',function (req, res) {
-    setService.setSites(req.body.data).then(function (data) {
-        res.json(data);
-    })
-        .catch(function (err) {
-            console.log(err);
-            res.status(500).send('get Unable to load sites');
-        });
+require('./src/services/routes')(app);
 
-});
-
-app.post('/bdashboard',function (req, res) {
-    setService.setBoltReports(req.body.data).then(function (data) {
-        res.json(data);
-    })
-        .catch(function (err) {
-            console.log(err);
-            res.status(500).send('get Unable to load reports');
-        });
-
-});
 // Map the "/" route to the home page
 app.get('/', require('src/pages/home'));
 app.get('/bolt_dashboard_page',require('src/pages/bolt_dashboard'));

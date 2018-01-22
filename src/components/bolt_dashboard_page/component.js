@@ -1,7 +1,7 @@
 require('es6-promise').polyfill();
 require('whatwg-fetch');
 
-// let setReports = require('../../clients/fetchApi').setReports();
+let setReports = require('../../clients/fetchApi').setReports;
 
 module.exports = {
     onCreate: function () {
@@ -11,16 +11,18 @@ module.exports = {
     },
     handleHrefChange: function (event) {
         this.state.bolt_report = event.target.value;
-        var data = {"report": this.state.bolt_report};
+        console.log("###########" + event.target.value);
+        var data = {"data": this.state.bolt_report};
         setReports(data)
-            .then(function (json) {
-                if(json.success){
-                    if(json.report.trim().endsWith("bolt1"))
-                        sessionStorage.setItem("boltReport",event.target.value);
-                }
-            })
-            .catch((error) => {
-                console.log("error message is: " + error.message);
-            })
+        .then(function (json) {
+            console.log(JSON.stringify(json));
+            if(json.success){
+                sessionStorage.setItem("boltReport", json.report);
+                location.href = '/scanReport';
+            }
+        })
+        .catch((error) => {
+            console.log("error message is: " + error.message);
+        })
     }
 };
