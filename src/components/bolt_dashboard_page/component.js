@@ -6,9 +6,21 @@ let setReports = require('../../clients/fetchApi').setReports;
 module.exports = {
     onCreate: function () {
         this.state ={
-            bolt_report: "noReport"
+            bolt_report: "noReport",
+            high : 0,
+            medium : 0,
+            low : 0,
+            info : 0
         };
     },
+    onMount: function () {
+        // let burpIssue = getIssueData.getBurpIssue();
+        // this.state.high = burpIssue.high;
+        // this.state.medium = burpIssue.medium;
+        // this.state.low = burpIssue.low;
+        // this.state.info = burpIssue.info;
+    },
+
     handleHrefChange: function (event) {
         this.state.bolt_report = event.target.value;
         console.log("###########" + event.target.value);
@@ -18,7 +30,7 @@ module.exports = {
             console.log(JSON.stringify(json));
             if(json.success){
                 sessionStorage.setItem("boltReport", json.report);
-                location.href = '/scanReport';
+                location.href = '/scan_report';
             }
         })
         .catch((error) => {

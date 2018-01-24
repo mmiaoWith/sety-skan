@@ -6,19 +6,19 @@
     </div>
     <div id="report-container">
         <div if(state.report === 'bolt1')>
-            Burp bolt1 report
+            <include-html("../../../src/reports/BurpReport_1.html")/>
         </div>
         <div else-if(state.report === 'bolt2')>
-            Burp bolt2 report
+            <include-html("../../../src/reports/BurpReport_2.html")/>
         </div>
         <div else-if(state.report === 'bolt3')>
-            Burp bolt3 report
+            <include-html("../../../src/reports/BurpReport_3.html")/>
         </div>
         <div else-if(state.report === 'bolt4')>
-            Burp bolt4 report
+            <include-html("../../../src/reports/BurpReport_4.html")/>
         </div>
         <div else(state.report === 'bolt5')>
-            Burp bolt5 report
+            <include-html("../../../src/reports/BurpReport_5.html")/>
         </div>
     </div>
 </div>

@@ -1,0 +1,27 @@
+<div id="container">
+    <h1>QA Security Testing of BOLT</h1>
+    <div id="header">
+        <div id="header-right"><button_back_to_dashboard/></div>
+    </div>
+    <div id="scan-container">
+        <p>Scan domain:</p>
+        <div id="scanDomain">
+            <div if(state.site === 'bolt')>
+                <a href="#">bolt domain</a>
+            </div>
+            <div else-if(state.site === 'kijiji')>
+                <a href="#">kijiji domain</a>
+            </div>
+            <div else-if(state.site === 'gumtree')>
+                <a href="https://www.gumtree.co.za.staging2.qa-bolt.com/">https://www.gumtree.co.za.staging2.qa-bolt.com/</a>
+            </div>
+        </div>
+        <p>Enter the path of accessing the application</p>
+        <input type="text" name="domainPath" onChange('handleChangeDomainPath')>
+        <p>To scan a different domain, enter below:</p>
+        <input type="text" name="diffDomain" onChange('handleChangeDiffDomain')>
+    </div>
+    <div id="scandiv">
+        <button id="launchScan" onClick('handleLaunchNewScan')>Launch Scan</button>
+    </div>
+</div>

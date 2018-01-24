@@ -20,7 +20,18 @@ let setReports = function (data) {
     })
 };
 
+let setNewScan = function (data) {
+    return fetch('/start_new_scan',{
+        method: "POST",
+        headers:{'Content-Type': 'application/json'},
+        body:JSON.stringify(data)
+    }).then((response) => {
+        return response.json();
+    })
+};
+
 module.exports = {
     setSites,
-    setReports
+    setReports,
+    setNewScan
 };

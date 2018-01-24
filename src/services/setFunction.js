@@ -20,7 +20,19 @@ let setBoltReports = function (report) {
     })
 };
 
+let setNewScan = function (scanSite) {
+    var results = {
+        "success": true,
+        "scanSite": scanSite
+    };
+
+    return new Promise((resolve, reject) => {
+        resolve(results);
+    })
+};
+
 module.exports = {
     setSites,
-    setBoltReports
+    setBoltReports,
+    setNewScan
 };
