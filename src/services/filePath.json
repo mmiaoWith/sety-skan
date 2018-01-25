@@ -1,3 +1,5 @@
 {
-  "burpReportPath":"src/reports/BurpReport_1.html"
+  "burpBoltReportPath":"src/reports/bolt/BurpReport_1.html",
+  "burpGumtreeReportPath":"src/reports/gumtree/BurpReport_1.html",
+  "burpKijijiReportPath":"src/reports/kijiji/BurpReport_1.html"
 }

@@ -6,19 +6,52 @@
     </div>
     <div id="report-container">
         <div if(state.report === 'bolt1')>
-            <include-html("../../../src/reports/BurpReport_1.html")/>
+            <include-html("../../../src/reports/bolt/BurpReport_1.html")/>
         </div>
         <div else-if(state.report === 'bolt2')>
-            <include-html("../../../src/reports/BurpReport_2.html")/>
+            <include-html("../../../src/reports/bolt/BurpReport_2.html")/>
         </div>
         <div else-if(state.report === 'bolt3')>
-            <include-html("../../../src/reports/BurpReport_3.html")/>
+            <include-html("../../../src/reports/bolt/BurpReport_3.html")/>
         </div>
         <div else-if(state.report === 'bolt4')>
-            <include-html("../../../src/reports/BurpReport_4.html")/>
+            <include-html("../../../src/reports/bolt/BurpReport_4.html")/>
         </div>
-        <div else(state.report === 'bolt5')>
-            <include-html("../../../src/reports/BurpReport_5.html")/>
+        <div else-if(state.report === 'bolt5')>
+            <include-html("../../../src/reports/bolt/BurpReport_5.html")/>
+        </div>
+        <div else-if(state.report === 'gumtree1')>
+            <include-html("../../../src/reports/gumtree/BurpReport_1.html")/>
+        </div>
+        <div else-if(state.report === 'gumtree2')>
+            <include-html("../../../src/reports/gumtree/BurpReport_2.html")/>
+        </div>
+        <div else-if(state.report === 'gumtree3')>
+            <include-html("../../../src/reports/gumtree/BurpReport_3.html")/>
+        </div>
+        <div else-if(state.report === 'gumtree4')>
+            <include-html("../../../src/reports/gumtree/BurpReport_4.html")/>
+        </div>
+        <div else-if(state.report === 'gumtree5')>
+            <include-html("../../../src/reports/gumtree/BurpReport_5.html")/>
+        </div>
+        <div else-if(state.report === 'kijiji1')>
+            <include-html("../../../src/reports/kijiji/BurpReport_2.html")/>
+        </div>
+        <div else-if(state.report === 'kijiji2')>
+            <include-html("../../../src/reports/kijiji/BurpReport_2.html")/>
+        </div>
+        <div else-if(state.report === 'kijiji3')>
+            <include-html("../../../src/reports/kijiji/BurpReport_3.html")/>
+        </div>
+        <div else-if(state.report === 'kijiji4')>
+            <include-html("../../../src/reports/kijiji/BurpReport_4.html")/>
+        </div>
+        <div else-if(state.report === 'kijiji5')>
+            <include-html("../../../src/reports/kijiji/BurpReport_5.html")/>
+        </div>
+        <div else>
+            ERROR!
         </div>
     </div>
 </div>

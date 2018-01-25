@@ -6,7 +6,7 @@ module.exports = {
     },
 
     onMount: function () {
-        this.state.report = sessionStorage.getItem("boltReport");
+        this.state.report = sessionStorage.getItem("reportType");
     }
 
 };

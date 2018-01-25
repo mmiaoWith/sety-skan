@@ -1,0 +1,43 @@
+<div id = "container">
+    <h1>QA Security Testing of Kijiji</h1>
+    <div id = "top">
+        <h3>Summary of the issues found by last scan:</h3>
+        <table class="summary_table" cellpadding="0" cellspacing="0">
+            <tr class="top-row">
+                 <td>Risk</td>
+                 <td>Number</td>
+            </tr>
+            <tr class="high-issue">
+                 <td>High</td>
+                 <td>${state.high}</td>
+            </tr>
+            <tr class="medium-issue">
+                 <td>Medium</td>
+                 <td>${state.medium}</td>
+            </tr>
+            <tr class="low-issue">
+                 <td>Low</td>
+                 <td>${state.low}</td>
+            </tr>
+            <tr class="info-issue">
+                 <td>Informational</td>
+                 <td>${state.info}</td>
+            </tr>
+        </table>
+    </div>
+    <div id="bottom">
+        <div id = "bottom-left">
+            <h3>Scan Report History</h3>
+            <ul id="report">
+                <li><button name="kijiji1" value="kijiji1" onClick('handleHrefChange')>Scan Report 1</button></li>
+                <li><button name="kijiji2" value="kijiji2" onClick('handleHrefChange')>Scan Report 2</button></li>
+                <li><button name="kijiji3" value="kijiji3" onClick('handleHrefChange')>Scan Report 3</button></li>
+                <li><button name="kijiji4" value="kijiji4" onClick('handleHrefChange')>Scan Report 4</button></li>
+                <li><button name="kijiji5" value="kijiji5" onClick('handleHrefChange')>Scan Report 5</button></li>
+            </ul>
+        </div>
+        <div id = "bottom-right">
+            <a href = "/new_scan">Launch New Scan</a>
+        </div>
+    </div>
+</div>

@@ -26,11 +26,11 @@ module.exports = {
                 }
                 else if(json.site.trim().endsWith("kijiji")) {
                     sessionStorage.setItem("scanSite","kijiji");
-                    location.href = '/kijiji-page';
+                    location.href = '/kijiji_dashboard_page';
                 }
                 else if(json.site.trim().endsWith("gumtree")) {
                     sessionStorage.setItem("scanSite","gumtree");
-                    location.href = '/gumtree-page';
+                    location.href = '/gumtree_dashboard_page';
                 }
                 else
                     location.href = '/error';

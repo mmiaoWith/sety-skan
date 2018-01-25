@@ -10,8 +10,28 @@ let setSites = function (data) {
     })
 };
 
-let setReports = function (data) {
+let setBoltReports = function (data) {
     return fetch('/bolt_dashboard',{
+        method: "POST",
+        headers:{'Content-Type': 'application/json'},
+        body:JSON.stringify(data)
+    }).then((response) => {
+        return response.json();
+    })
+};
+
+let setGumtreeReports = function (data) {
+    return fetch('/gumtree_dashboard',{
+        method: "POST",
+        headers:{'Content-Type': 'application/json'},
+        body:JSON.stringify(data)
+    }).then((response) => {
+        return response.json();
+    })
+};
+
+let setKijijiReports = function (data) {
+    return fetch('/kijiji_dashboard',{
         method: "POST",
         headers:{'Content-Type': 'application/json'},
         body:JSON.stringify(data)
@@ -37,9 +57,27 @@ let getBoltBurpData = function () {
     })
 };
 
+let getGumtreeBurpData = function () {
+    return fetch('/gumtree_burp_data')
+        .then((response) => {
+            return response.json();
+        })
+};
+
+let getKijijiBurpData = function () {
+    return fetch('/kijiji_burp_data')
+        .then((response) => {
+            return response.json();
+        })
+};
+
 module.exports = {
     setSites,
-    setReports,
+    setBoltReports,
+    setGumtreeReports,
+    setKijijiReports,
     setNewScan,
-    getBoltBurpData
+    getBoltBurpData,
+    getGumtreeBurpData,
+    getKijijiBurpData
 };

@@ -37,9 +37,15 @@ require('./src/services/routes')(app);
 // Map the "/" route to the home page
 app.get('/', require('src/pages/home'));
 app.get('/bolt_dashboard_page',require('src/pages/bolt_dashboard'));
+app.get('/gumtree_dashboard_page',require('src/pages/gumtree_dashboard'));
+app.get('/kijiji_dashboard_page',require('src/pages/kijiji_dashboard'));
 app.get('/scan_report',require('src/pages/scan_report'));
 app.get('/new_scan',require('src/pages/launch_new_scan'));
 app.get('/launch_scan',require('src/pages/launch_scan'));
+
+app.use((req, res, next) => {
+    res.status(404).send('sorry cant find that!');
+});
 
 app.listen(port, function(err) {
     if (err) {

@@ -1,8 +1,8 @@
 require('es6-promise').polyfill();
 require('whatwg-fetch');
 
-let setReports = require('../../clients/fetchApi').setBoltReports;
-let getIssueData = require('../../clients/fetchApi').getBoltBurpData;
+let setReports = require('../../clients/fetchApi').setGumtreeReports;
+let getIssueData = require('../../clients/fetchApi').getGumtreeBurpData;
 
 module.exports = {
     onCreate: function () {
