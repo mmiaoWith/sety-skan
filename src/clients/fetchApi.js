@@ -30,8 +30,16 @@ let setNewScan = function (data) {
     })
 };
 
+let getBoltBurpData = function () {
+    return fetch('/bolt_burp_data')
+        .then((response) => {
+        return response.json();
+    })
+};
+
 module.exports = {
     setSites,
     setReports,
-    setNewScan
+    setNewScan,
+    getBoltBurpData
 };

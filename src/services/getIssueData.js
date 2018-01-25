@@ -2,7 +2,7 @@ const fs = require("fs");
 const cheerio = require("cheerio");
 const iconv = require("iconv-lite");
 
-let buffer=fs.readFileSync(`${process.cwd()}/filePath.json`);
+let buffer=fs.readFileSync(`${process.cwd()}/src/services/filePath.json`);
 let filepath = JSON.parse(buffer);
 
 function getBurpIssue(){
@@ -22,7 +22,11 @@ function getBurpIssue(){
     burpIssue.low = $('html').find(".low_certain").text();
     burpIssue.info = $('html').find(".colour_holder > .info_certain").text();
 
-    return burpIssue;
+    return new Promise((resolve, reject) => {
+        setTimeout(function() {
+            resolve(burpIssue);
+        }, 1000);
+    });
 }//getBurpIssue
 
 module.exports = {

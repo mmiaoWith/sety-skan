@@ -2,6 +2,7 @@ require('es6-promise').polyfill();
 require('whatwg-fetch');
 
 let setReports = require('../../clients/fetchApi').setReports;
+let getIssueData = require('../../clients/fetchApi').getBoltBurpData;
 
 module.exports = {
     onCreate: function () {
@@ -14,11 +15,22 @@ module.exports = {
         };
     },
     onMount: function () {
-        // let burpIssue = getIssueData.getBurpIssue();
-        // this.state.high = burpIssue.high;
-        // this.state.medium = burpIssue.medium;
-        // this.state.low = burpIssue.low;
-        // this.state.info = burpIssue.info;
+        var state = this.state;
+        this.fetchPromise = Promise.resolve();
+        this.fetchPromise = this.fetchPromise
+            .then(function() {
+                return getIssueData();
+            })
+            .then(function(getIssue) {
+                console.log(JSON.stringify(getIssue));
+                state.high = getIssue.high;
+                state.medium = getIssue.medium;
+                state.low = getIssue.low;
+                state.info = getIssue.info;
+            })
+            .catch(function(e) {
+                console.log('Fetch failed:', e);
+            });
     },
 
     handleHrefChange: function (event) {
