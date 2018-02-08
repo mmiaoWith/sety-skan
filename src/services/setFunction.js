@@ -42,10 +42,11 @@ let setKijijiReports = function (report) {
     })
 };
 
-let setNewScan = function (scanSite) {
+let setNewScan = function (data) {
     var results = {
         "success": true,
-        "scanSite": scanSite
+        "scanSite": data.scanPath,
+        "reportPath":data.reportPath
     };
 
     return new Promise((resolve, reject) => {

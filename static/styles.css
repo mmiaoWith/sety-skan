@@ -72,9 +72,51 @@ tr.info-issue{
 #scandiv{
     float: left;
 }
-#submitButton{
-    margin-left: 20px;
-}
 a:hover {
     color: blueviolet;
+}
+#submitButton{
+    background:#f89301;
+    height: 3em;
+    width: 6em;
+    line-height: 3em;
+    text-align: center;
+    display: block;
+    border: 2px solid #fff;
+    box-shadow: -1px 1px 1px rgba(51,51,51,.2);
+    -webkit-border-radius: 3em;
+    -moz-border-radius: 3em;
+    border-radius: 3em;
+}
+#launchNewScanButton{
+    background:#f89301;
+    height: 3em;
+    width: 12em;
+    line-height: 3em;
+    text-align: center;
+    display: block;
+    border: 2px solid #fff;
+    box-shadow: -1px 1px 1px rgba(51,51,51,.2);
+    -webkit-border-radius: 3em;
+    -moz-border-radius: 3em;
+    border-radius: 3em;
+}
+#backToDashboard{
+    background:#ababab;
+    height: 3em;
+    width: 15em;
+    line-height: 3em;
+    text-align: center;
+    display: block;
+    border: 2px solid #fff;
+    box-shadow: -1px 1px 1px rgba(51,51,51,.2);
+    -webkit-border-radius: 3em;
+    -moz-border-radius: 3em;
+    border-radius: 3em;
+}
+div#scan-container{
+    text-align: center;
+    width: auto;
+    height: auto;
+    border: 1em solid lightblue;
 }
