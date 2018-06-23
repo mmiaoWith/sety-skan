@@ -1,3 +1,5 @@
+'use strict'
+
 require('whatwg-fetch');
 
 let setSites = function (data) {

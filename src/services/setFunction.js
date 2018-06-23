@@ -1,3 +1,5 @@
+'use strict'
+
 let setSites = function (site) {
     var results = {
         "success": true,

@@ -1,3 +1,4 @@
+'use strict'
 require('app-module-path').addPath(__dirname);
 require('marko/express');
 require('marko/node-require');

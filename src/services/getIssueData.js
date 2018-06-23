@@ -1,3 +1,5 @@
+'use strict'
+
 const fs = require("fs");
 const cheerio = require("cheerio");
 const iconv = require("iconv-lite");
