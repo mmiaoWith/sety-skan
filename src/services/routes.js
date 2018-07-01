@@ -3,6 +3,16 @@ var getBurpData = require('./getIssueData');
 
 module.exports = function (router) {
 
+    router.post('/login', (req, res) => {
+        setService.setLoginInfo(req.body.data).then(function (data) {
+            res.json(data);
+        })
+            .catch(function (err) {
+                console.log(err);
+                res.status(500).send('get Unable to load sites');
+            });
+    });
+
     router.post('/input', (req, res) => {
         setService.setSites(req.body.data).then(function (data) {
             res.json(data);

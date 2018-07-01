@@ -1,5 +1,17 @@
 'use strict'
 
+let setLoginInfo = function (data) {
+    var results = {
+        "success": true,
+        "email": data.email,
+        "pwd":data.pwd
+    };
+
+    return new Promise((resolve, reject) => {
+        resolve(results);
+    })
+};
+
 let setSites = function (site) {
     var results = {
         "success": true,
@@ -57,6 +69,7 @@ let setNewScan = function (data) {
 };
 
 module.exports = {
+    setLoginInfo,
     setSites,
     setBoltReports,
     setGumtreeReports,

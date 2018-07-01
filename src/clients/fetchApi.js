@@ -52,6 +52,16 @@ let setNewScan = function (data) {
     })
 };
 
+let setUserInfo = function (data) {
+    return fetch('/login',{
+        method: "POST",
+        headers:{'Content-Type': 'application/json'},
+        body:JSON.stringify(data)
+    }).then((response) => {
+        return response.json();
+    });
+};
+
 let getBoltBurpData = function () {
     return fetch('/bolt_burp_data')
         .then((response) => {
@@ -74,6 +84,7 @@ let getKijijiBurpData = function () {
 };
 
 module.exports = {
+    setUserInfo,
     setSites,
     setBoltReports,
     setGumtreeReports,

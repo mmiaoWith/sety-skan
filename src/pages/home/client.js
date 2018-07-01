@@ -1,5 +1,6 @@
 require('src/global-style/style.less');
 require('src/layouts/default/style.less');
+require('src/components/login_page');
 require('src/components/select_site_page');
 require('src/components/bolt_dashboard_page');
 require('src/components/gumtree_dashboard_page');

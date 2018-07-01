@@ -1,4 +1,3 @@
-'use strict'
 require('app-module-path').addPath(__dirname);
 require('marko/express');
 require('marko/node-require');
@@ -36,6 +35,7 @@ app.use('/static', serveStatic(__dirname + '/static'));
 require('./src/services/routes')(app);
 
 // Map the "/" route to the home page
+app.get('/login',require('src/pages/login'));
 app.get('/', require('src/pages/home'));
 app.get('/bolt_dashboard_page',require('src/pages/bolt_dashboard'));
 app.get('/gumtree_dashboard_page',require('src/pages/gumtree_dashboard'));
